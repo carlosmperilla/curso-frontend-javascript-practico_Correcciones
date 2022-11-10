@@ -144,6 +144,12 @@ function renderProducts(arr){
             const detailInfo= document.querySelector("#detail-info")
             detailInfo.innerText= productInfoDetail
 
+            // Para evitar botones residuales de otros productos.
+            let primaryButtonsForState = stateContainer.getElementsByClassName("primary-button")
+            if (primaryButtonsForState.length > 0) {
+                primaryButtonsForState[0].remove()
+            }
+
             const addCartButton=document.createElement("button")
             addCartButton.classList.add("primary-button")
             addCartButton.classList.add("add-to-cart-button")
@@ -155,10 +161,12 @@ function renderProducts(arr){
             addCartButton.appendChild(cartIcon)
             stateContainer.appendChild(addCartButton)
 
-            addCartButton.addEventListener("pointerdown", ()=>{
+            addCartButton.addEventListener("pointerdown", (event)=>{
                 console.log(productInfoFigure.classList)
                 addingProduct(productInfoFigure.classList, productList)
-                addCartButton.remove()
+                // addCartButton.remove()
+                event.target.remove() // event.target señala al mismo objeto que llamo el evento
+
             })
         })
 
