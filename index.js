@@ -11,6 +11,9 @@ const shoppingCounter= document.querySelector("#shopping-counter")
 const MyOrderList= document.querySelector(".shopping-cart")
 const totalOrder= document.querySelector("#total-order")
 
+// Para darle funcionalidad a la flecha dentro del carrito
+const closeShoppingCartContainer = shoppingCartContainer.querySelector(".title-container img")
+
 let counter=0
 let codeId
 let productAdded
@@ -20,6 +23,9 @@ menuEmail.addEventListener("pointerdown", toggleDesktopMenu)
 HamMenuIcon.addEventListener("pointerdown", toggleMobileMenu)
 carMenuIcon.addEventListener("pointerdown", toggleAside)
 productDetailCloseIcon.addEventListener("pointerdown", closeProductDetail)
+
+// Se dispara el mismo evento que en carMenuIcon, con click para evitar que actue con click derecho.
+closeShoppingCartContainer.addEventListener("click", toggleAside)
 
 function toggleDesktopMenu(){
     const isAsideClosed= shoppingCartContainer.classList.contains("inactive")  
