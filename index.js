@@ -60,6 +60,8 @@ function toggleAside(){
         productDetailContainer.classList.add("inactive")
     }
 
+    // Para que se cierre el menu desktop del correo, al abrir carrito.
+    desktopMenu.classList.add("inactive")
     shoppingCartContainer.classList.toggle("inactive")
 }
 
