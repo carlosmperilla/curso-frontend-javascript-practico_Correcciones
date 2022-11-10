@@ -161,13 +161,18 @@ function renderProducts(arr){
             addCartButton.appendChild(cartIcon)
             stateContainer.appendChild(addCartButton)
 
-            addCartButton.addEventListener("pointerdown", (event)=>{
+            // Para poder remover el evento es necesario nombrarlo.
+            let addCartButtonFuncEvent =  (event)=>{
                 console.log(productInfoFigure.classList)
                 addingProduct(productInfoFigure.classList, productList)
                 // addCartButton.remove()
-                event.target.remove() // event.target señala al mismo objeto que llamo el evento
+                // event.target.remove() // event.target señala al mismo objeto que llamo el evento
+                // Retome el enfoque de usar addCartButton porque al tocar la imagen interna tambien se activa el evento.
+                addCartButton.removeEventListener("pointerdown", addCartButtonFuncEvent, false)
+                addCartButton.classList.add("disabled-button")
 
-            })
+            }
+            addCartButton.addEventListener("pointerdown", addCartButtonFuncEvent)
         })
 
         const productInfo= document.createElement("div")

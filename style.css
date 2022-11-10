@@ -411,6 +411,17 @@ aside {
       height: 50px;
   }
 
+/* INICIO Estilo boton deshabilitado */
+.disabled-button {
+    background-color: #aaa;
+    color: #555;
+} 
+
+.disabled-button > img {
+    display: none;
+}
+/* FIN Estilo boton deshabilitado */
+
   .add-to-cart-button {
       display: flex;
       align-items: center;
