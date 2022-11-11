@@ -21,6 +21,9 @@ Demo en:  https://natsumychan.github.io/curso-frontend-javascript-practico/
 
 ## Correcciones Javascript
 
+### URL Corrección
+https://carlosmperilla.github.io/curso-frontend-javascript-practico_Correcciones/
+
 ### Botones que se repiten
 Se verifica en el evento de la imagen (productImg) que no existan botones primarios en el estado de la tarjeta de detalles. Si existen se remueven.
 
